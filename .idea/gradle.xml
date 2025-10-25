@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="GradleSettings">
+    <option name="linkedExternalProjectsSettings">
+      <GradleProjectSettings>
+        <compositeConfiguration>
+          <compositeBuild compositeDefinitionSource="SCRIPT">
+            <builds>
+              <build path="$PROJECT_DIR$/../../flutter/flutter/packages/flutter_tools/gradle" name="gradle">
+                <projects>
+                  <project path="$PROJECT_DIR$/../../flutter/flutter/packages/flutter_tools/gradle" />
+                </projects>
+              </build>
+            </builds>
+          </compositeBuild>
+        </compositeConfiguration>
+        <option name="externalProjectPath" value="$PROJECT_DIR$/ass/Flutter/login_system/android" />
+        <option name="gradleJvm" value="valhalla-ea-23" />
+        <option name="modules">
+          <set>
+            <option value="$PROJECT_DIR$/ass/Flutter/login_system/android" />
+            <option value="$PROJECT_DIR$/ass/Flutter/login_system/android/app" />
+            <option value="$PROJECT_DIR$/../../flutter/flutter/packages/flutter_tools/gradle" />
+          </set>
+        </option>
+      </GradleProjectSettings>
+      <GradleProjectSettings>
+        <option name="externalProjectPath" value="$PROJECT_DIR$/ass/Kotlin/LoginNavigation" />
+        <option name="gradleJvm" value="ms-21" />
+        <option name="modules">
+          <set>
+            <option value="$PROJECT_DIR$/ass/Kotlin/LoginNavigation" />
+            <option value="$PROJECT_DIR$/ass/Kotlin/LoginNavigation/app" />
+          </set>
+        </option>
+      </GradleProjectSettings>
+      <GradleProjectSettings>
+        <compositeConfiguration>
+          <compositeBuild compositeDefinitionSource="SCRIPT">
+            <builds>
+              <build path="$PROJECT_DIR$/../../flutter/flutter/packages/flutter_tools/gradle" name="gradle">
+                <projects>
+                  <project path="$PROJECT_DIR$/../../flutter/flutter/packages/flutter_tools/gradle" />
+                </projects>
+              </build>
+            </builds>
+          </compositeBuild>
+        </compositeConfiguration>
+        <option name="externalProjectPath" value="$PROJECT_DIR$/namer_app/android" />
+        <option name="gradleJvm" value="valhalla-ea-23" />
+        <option name="modules">
+          <set>
+            <option value="$PROJECT_DIR$/namer_app/android" />
+            <option value="$PROJECT_DIR$/namer_app/android/app" />
+            <option value="$PROJECT_DIR$/../../flutter/flutter/packages/flutter_tools/gradle" />
+          </set>
+        </option>
+      </GradleProjectSettings>
+    </option>
+  </component>
+</project>
