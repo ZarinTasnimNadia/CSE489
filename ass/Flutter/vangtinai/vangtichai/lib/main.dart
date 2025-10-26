@@ -91,7 +91,7 @@ class _VangtiChaiHomeState extends State<VangtiChaiHome> {
 
   Widget _buildAmountDisplay(double fontSize) {
     return Padding(
-      padding: const EdgeInsets.all(16.0),
+      padding: const EdgeInsets.all(1.0),
       child: Text(
         'Taka: $_currentAmount',
         style: TextStyle(
@@ -111,12 +111,12 @@ class _VangtiChaiHomeState extends State<VangtiChaiHome> {
         children: _takaNotes.map((note) {
           final count = _changeMap[note] ?? 0;
           return Padding(
-            padding: const EdgeInsets.symmetric(vertical: 4.0),
+            padding: const EdgeInsets.symmetric(vertical: 0),
             child: Text(
               '$note: $count',
               style: TextStyle(
                 fontSize: fontSize, 
-                color: deepPurplePinkishText.withOpacity(0.8),
+                color: deepPurplePinkishText.withValues(alpha: .8),
               ),
             ),
           );
@@ -144,9 +144,9 @@ class _VangtiChaiHomeState extends State<VangtiChaiHome> {
               backgroundColor: isClear 
                   ? MyApp.accentPinkish
                   : const Color.fromARGB(255, 220, 200, 230), 
-              shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8.0)),
-              textStyle: const TextStyle(fontSize: 25, fontWeight: FontWeight.w600, fontFamily: 'monospace'),
-              minimumSize: const Size.fromHeight(60),
+              shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(100)),
+              textStyle: const TextStyle(fontSize: 20, fontWeight: FontWeight.w600, fontFamily: 'monospace'),
+              minimumSize: const Size.fromHeight(40),
               foregroundColor: isClear ? Colors.white : MyApp.primaryDeepPurple,
             ),
             child: Text(isClear ? 'CLEAR' : key),
@@ -162,7 +162,7 @@ class _VangtiChaiHomeState extends State<VangtiChaiHome> {
         children: [
           ...keyRows.map((row) => Row(
                 children: row.map((key) => buildKey(key)).toList(),
-              )).toList(),
+              )),
 
           Row(
             children: <Widget>[
@@ -176,9 +176,9 @@ class _VangtiChaiHomeState extends State<VangtiChaiHome> {
                     onPressed: () => _onKeypadTap('C'), 
                     style: ElevatedButton.styleFrom(
                       backgroundColor: MyApp.accentPinkish,
-                      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8.0)),
-                      textStyle: const TextStyle(fontSize: 25, fontWeight: FontWeight.w600, fontFamily: 'monospace'),
-                      minimumSize: const Size.fromHeight(60),
+                      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(100)),
+                      textStyle: const TextStyle(fontSize: 20, fontWeight: FontWeight.w600, fontFamily: 'monospace'),
+                      minimumSize: const Size.fromHeight(40),
                       foregroundColor: Colors.white,
                     ),
                     child: const Text('CLEAR'),
