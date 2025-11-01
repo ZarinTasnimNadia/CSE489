@@ -1,0 +1,26 @@
+<resources>
+    <string name="app_name">App</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <string name="menu_broadcast_receiver">Broadcast Receiver</string>
+    <string name="menu_image_scale">Image Scale</string>
+    <string name="menu_video">Video</string>
+    <string name="menu_audio">Audio</string>
+
+    <string-array name="broadcast_options">
+        <item>Custom broadcast receiver</item>
+        <item>System battery notification receiver</item>
+    </string-array>
+
+    <string name="prompt_select_broadcast">Select a broadcast type</string>
+    <string name="button_proceed">Proceed</string>
+    <string name="prompt_enter_message">Enter Message for Custom Broadcast:</string>
+    <string name="hint_custom_message">Type your custom message here</string>
+    <string name="button_send_broadcast">Send Custom Broadcast</string>
+
+    <string name="status_waiting_broadcast">Waiting for custom broadcast...</string>
+    <string name="message_received_format">Message Received:\n%s</string>
+    <string name="battery_status_format">Battery Percentage: %d %%</string>
+</resources>

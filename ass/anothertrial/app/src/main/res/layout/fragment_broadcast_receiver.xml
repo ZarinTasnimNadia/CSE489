@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+        android:text="@string/prompt_select_broadcast"
+        android:textSize="18sp"
+        android:paddingBottom="8dp"/>
+
+    <Spinner android:id="@+id/broadcastSpinner" android:layout_width="match_parent"
+        android:layout_height="wrap_content" android:spinnerMode="dropdown"/>
+
+    <Button android:id="@+id/proceedButton" android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:text="@string/button_proceed"/>
+</LinearLayout>
