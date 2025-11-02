@@ -14,8 +14,7 @@ class VideoFragment : Fragment(R.layout.fragment_video) {
     private lateinit var videoView: VideoView
     private lateinit var playButton: Button
 
-    // 1. Define the resource ID for the local file.
-    // Assumes the file is named 'video_file.mp4' in res/raw/
+
     private val VIDEO_RESOURCE_ID = R.raw.video_file
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -24,12 +23,12 @@ class VideoFragment : Fragment(R.layout.fragment_video) {
         videoView = view.findViewById(R.id.videoView)
         playButton = view.findViewById(R.id.playVideoButton)
 
-        // 2. FIX: Create the local resource URI (android.resource://package/resource_id)
+
         val resourceUri = Uri.parse("android.resource://${requireContext().packageName}/$VIDEO_RESOURCE_ID")
 
         videoView.setVideoURI(resourceUri)
         videoView.setVideoURI(resourceUri)
-        // Use setVideoURI with the local resource path
+
         videoView.setVideoURI(resourceUri)
 
         // 3. Prepare the Media Controller (standard controls)
@@ -37,12 +36,12 @@ class VideoFragment : Fragment(R.layout.fragment_video) {
         mediaController.setAnchorView(videoView)
         videoView.setMediaController(mediaController)
 
-        // Optional: Listen for when the video is prepared (finished loading)
+
         videoView.setOnPreparedListener {
             Toast.makeText(context, "Video is ready to play.", Toast.LENGTH_SHORT).show()
         }
 
-        // 4. Set up the play/pause button click listener
+
         playButton.setOnClickListener {
             if (videoView.isPlaying) {
                 videoView.pause()
@@ -57,25 +56,25 @@ class VideoFragment : Fragment(R.layout.fragment_video) {
             }
         }
 
-        // 5. Optional: Handle errors
+
         videoView.setOnErrorListener { mp, what, extra ->
             Toast.makeText(context, "Video Playback Error: $what, Extra: $extra", Toast.LENGTH_LONG).show()
             true
         }
     }
 
-    // 6. Best Practice: Stop playback when the Fragment view is destroyed
+
     override fun onPause() {
         super.onPause()
-        // Pause playback when the user moves away
+
         videoView.pause()
     }
 
     override fun onDestroyView() {
         super.onDestroyView()
-        // Stop playback and release internal MediaPlayer resources
+
         videoView.stopPlayback()
-        // Clearing the URI helps ensure the internal player is fully released
+
         videoView.setVideoURI(null)
     }
 }

@@ -14,7 +14,7 @@ class ImageScaleFragment : Fragment(R.layout.fragment_image_scale) {
     private lateinit var scaleGestureDetector: ScaleGestureDetector
     private var scaleFactor = 1.0f
 
-    // YOUR ORIGINAL IMAGE URL (May be blocked by the host)
+
     private val imageUrl = "https://i.pinimg.com/1200x/c9/21/19/c92119e130fef7df4e96ea112176570e.jpg"
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -22,10 +22,9 @@ class ImageScaleFragment : Fragment(R.layout.fragment_image_scale) {
 
         imageView = view.findViewById(R.id.scalableImageView)
 
-        // 1. Initialize the ScaleGestureDetector
+
         scaleGestureDetector = ScaleGestureDetector(requireContext(), ScaleListener())
 
-        // 2. ATTACH TOUCH LISTENER IMMEDIATELY (Crucial Fix for Gesture Interception)
         imageView.setOnTouchListener { v, event ->
             scaleGestureDetector.onTouchEvent(event)
             return@setOnTouchListener true
@@ -55,7 +54,7 @@ class ImageScaleFragment : Fragment(R.layout.fragment_image_scale) {
             scaleFactor *= detector.scaleFactor
             scaleFactor = Math.max(0.5f, Math.min(scaleFactor, 5.0f))
 
-            // 2. Set the pivot point to the center of the pinch (FIXES JITTERING/DRIFT)
+
             imageView.pivotX = detector.focusX
             imageView.pivotY = detector.focusY
 
@@ -69,7 +68,7 @@ class ImageScaleFragment : Fragment(R.layout.fragment_image_scale) {
         override fun onScaleEnd(detector: ScaleGestureDetector) {
             super.onScaleEnd(detector)
 
-            // Reset pivot point to the view's center after the gesture ends for stability
+
             imageView.pivotX = imageView.width / 2f
             imageView.pivotY = imageView.height / 2f
         }

@@ -18,10 +18,10 @@ class ReceiverFragment : Fragment(R.layout.fragment_receiver) {
         val message = arguments?.getString("message_data")
 
         if (message != null) {
-            // 2. Display the message instantly from arguments
+
             statusTextView.text = getString(R.string.message_received_format, message)
         } else {
-            // Default text if opened directly
+
             statusTextView.text = getString(R.string.status_waiting_broadcast)
         }
     }

@@ -20,7 +20,7 @@ class AudioFragment : Fragment(R.layout.fragment_audio) {
     private lateinit var currentDurationText: TextView
     private lateinit var totalDurationText: TextView
 
-    // Handler and Runnable for updating the SeekBar/time every 500ms
+
     private val handler = Handler(Looper.getMainLooper())
     private val updateSeekBar = object : Runnable {
         override fun run() {
@@ -29,7 +29,7 @@ class AudioFragment : Fragment(R.layout.fragment_audio) {
                 audioSeekBar.progress = currentPosition
                 currentDurationText.text = formatTime(currentPosition)
             }
-            // Schedule this runnable to run again after 500ms
+
             handler.postDelayed(this, 500)
         }
     }
@@ -123,7 +123,7 @@ class AudioFragment : Fragment(R.layout.fragment_audio) {
         }
     }
 
-    // Utility function to format milliseconds to "m:ss" format
+
     private fun formatTime(millis: Int): String {
         val minutes = TimeUnit.MILLISECONDS.toMinutes(millis.toLong())
         val seconds = TimeUnit.MILLISECONDS.toSeconds(millis.toLong()) -
@@ -131,7 +131,7 @@ class AudioFragment : Fragment(R.layout.fragment_audio) {
         return String.format("%d:%02d", minutes, seconds)
     }
 
-    // IMPORTANT: Release resources when the Fragment view is destroyed
+
     override fun onDestroyView() {
         super.onDestroyView()
         // Stop the seekbar update handler

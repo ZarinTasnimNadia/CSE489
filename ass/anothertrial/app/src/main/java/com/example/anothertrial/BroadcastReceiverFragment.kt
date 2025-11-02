@@ -33,7 +33,7 @@ class BroadcastReceiverFragment : Fragment(R.layout.fragment_broadcast_receiver)
                 else -> return@setOnClickListener
             }
 
-            // 2. Navigate to the next fragment
+
             parentFragmentManager.beginTransaction()
                 .replace(R.id.fragment_container, nextFragment)
                 .addToBackStack(null)

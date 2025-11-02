@@ -24,10 +24,10 @@ class InputFragment : Fragment(R.layout.fragment_input) {
                     putString("message_data", message)
                 }
 
-                // 2. Attach message as arguments
+
                 receiverFragment.arguments = args
 
-                // 3. Navigate to the Receiver screen
+
                 parentFragmentManager.beginTransaction()
                     .replace(R.id.fragment_container, receiverFragment)
                     .addToBackStack(null)
